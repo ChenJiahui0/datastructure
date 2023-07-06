@@ -1,77 +1,57 @@
 package com.cjh.queue;
 
-class MyCircularDeque {
-    int front, rear, size;
-    int[] q;
 
+class MyCircularDeque {
+    int front,rear,size;
+    int[] q;
     public MyCircularDeque(int k) {
         q = new int[k];
     }
 
     public static void main(String[] args) {
-        MyCircularDeque myCircularDeque = new MyCircularDeque(3);
-        myCircularDeque.insertLast(1);
-        myCircularDeque.insertLast(2);
-        myCircularDeque.insertFront(3);
-        myCircularDeque.insertFront(4);
-        myCircularDeque.getRear();
+        int[] a = new int[]{1,2,3};
+        int index = 1;
+        System.out.println(a[++index]);
     }
 
     public boolean insertFront(int value) {
-        if (isFull()) {
-            return false;
-        } else {
-            front = (front - 1 + q.length) % q.length;
-            q[front] = value;
-            size++;
-            return true;
+        if(isFull()) return false;
+        if(!isEmpty()){
+            front = (front+q.length-1)%q.length;
         }
+        size++;
+        q[front] = value;
+        return true;
     }
 
     public boolean insertLast(int value) {
-        if (isFull()) {
-            return false;
-        } else {
-            q[(++rear) % q.length] = value;
-            size++;
-            return true;
-        }
+        if(isFull()) return false;
+        if(!isEmpty()) rear = (rear+1)%q.length;
+        size++;
+        q[rear] = value;
+        return true;
     }
 
     public boolean deleteFront() {
-        if (isEmpty()) {
-            return false;
-        } else {
-            size--;
-            front++;
-            return true;
-        }
+        if(isEmpty()) return false;
+        size--;
+        front = front == rear ? rear : (front+1)%q.length;
+        return true;
     }
 
     public boolean deleteLast() {
-        if (isEmpty()) {
-            return false;
-        } else {
-            size--;
-            rear--;
-            return true;
-        }
+        if(isEmpty()) return false;
+        size--;
+        rear = rear == front ? front : (rear+q.length-1)%q.length;
+        return true;
     }
 
     public int getFront() {
-        if (isEmpty()) {
-            return -1;
-        } else {
-            return q[front % q.length];
-        }
+        return isEmpty() ? -1 : q[front];
     }
 
     public int getRear() {
-        if (isEmpty()) {
-            return -1;
-        } else {
-            return q[rear % q.length];
-        }
+        return isEmpty() ? -1 : q[rear];
     }
 
     public boolean isEmpty() {
