@@ -1,4 +1,4 @@
-package com.cjh.queue;
+package com.cjh.ds.queue;
 
 
 class MyCircularDeque {

@@ -1,4 +1,4 @@
-package com.cjh.dsu;
+package com.cjh.ds.dsu;
 
 public class DSU {
     int[] parent;

@@ -1,4 +1,4 @@
-package com.cjh.dsu;
+package com.cjh.ds.dsu;
 
 import java.util.ArrayList;
 import java.util.List;

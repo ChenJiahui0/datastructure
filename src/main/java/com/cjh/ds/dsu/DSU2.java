@@ -1,19 +1,19 @@
-package com.cjh.dsu;
+package com.cjh.ds.dsu;
 
 import java.util.Arrays;
 
 /**
- * improved with rank
+ * improved with size
  */
-public class DSU3 {
+public class DSU2 {
     int[] parent;
-    int[] rank;
+    int[] size;
 
-    public DSU3(int n) {
+    public DSU2(int n) {
         parent = new int[n];
-        rank = new int[n];
+        size = new int[n];
         for (int i = 0; i < n; i++) parent[i] = i;
-        Arrays.fill(rank, 1);
+        Arrays.fill(size, 1);
     }
 
     public int find(int x) {
@@ -24,15 +24,12 @@ public class DSU3 {
     public void union(int x, int y) {
         int rootX = find(x), rootY = find(y);
         if (rootX == rootY) return;
-        if (rank[rootX] < rank[rootY]) {
+        if (size[rootX] <= size[rootY]) {
             parent[rootX] = rootY;
-            rank[rootY] += rank[rootX];
-        }else if (rank[rootX] > rank[rootY]){
-            parent[rootY] = rootX;
-            rank[rootX] += rank[rootY];
+            size[rootY] += size[rootX];
         }else{
-            parent[rootX] = rootY;
-            rank[rootY]++;
+            parent[rootY] = rootX;
+            size[rootX] += size[rootY];
         }
     }
 }

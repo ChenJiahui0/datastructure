@@ -1,4 +1,4 @@
-package com.cjh.heap;
+package com.cjh.ds.heap;
 
 public class PriorityQueue {
     public static void main(String[] args) {
