@@ -1,6 +1,8 @@
 package com.cjh.leetcode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class LeetcodeTree {
@@ -68,6 +70,14 @@ class TreeNode {
 
         }
         return root;
+    }
+    public static List<Object> preOrder(TreeNode node) {
+        if(node == null) return List.of("null");
+        List<Object> res = new ArrayList<>();
+        res.add(node.val);
+        res.addAll(preOrder(node.left));
+        res.addAll(preOrder(node.right));
+        return res;
     }
 
 
