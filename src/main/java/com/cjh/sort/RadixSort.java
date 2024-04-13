@@ -7,10 +7,10 @@ import java.util.List;
 public class RadixSort {
     public static void main(String[] args) {
         int[] arr = {3, 2, 4, 5,100};
-        radixSort(arr);
+        sort(arr);
         System.out.println(Arrays.toString(arr));
     }
-    public static void radixSort(int[] arr){
+    public static void sort(int[] arr){
         int max = Arrays.stream(arr).max().getAsInt();
         List<List<Integer>> tmpList = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {

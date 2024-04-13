@@ -6,11 +6,12 @@ public class Heap {
     public static void main(String[] args) {
         int[] a = new int[]{5, 3, 1, 2, 4};
         for (int i = a.length / 2; i >= 0; i--) {
-            heapify2(a, i);
+            heapify(a, i);
         }
         System.out.println(Arrays.toString(a));
     }
 
+    // 递归写法
     public static void heapify(int[] array, int i) {
         int largest = i, l = 2 * i + 1, r = 2 * i + 2;
         if (l < array.length && array[largest] < array[l]) largest = l;
@@ -23,6 +24,7 @@ public class Heap {
         }
     }
 
+    // 迭代写法
     public static void heapify2(int[] array, int i) {
         while (true) {
             int largest = i, l = 2 * i + 1, r = 2 * i + 2;
