@@ -28,7 +28,7 @@ public class LC2385 {
                 if (l < 0 || r < 0) {
                     ans = Math.max(Math.abs(l) + Math.abs(r), ans);
                     // 返回目标节点到父节点的距离，值为目标节点到当前节点距离+1
-                    return Math.min(l, r)- 1;
+                    return Math.min(l, r) - 1;
                 } else {
                     // 目标节点不在子树上，选择最长的子树长度
                     return Math.max(l, r) + 1;
@@ -36,5 +36,4 @@ public class LC2385 {
             }
         }
     }
-
 }
