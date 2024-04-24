@@ -55,11 +55,16 @@ class TreeNode {
         queue.offer(root);
         for (int i = 1; i < arr.length; ) {
             TreeNode node = queue.poll();
+            while(!queue.isEmpty() && node==null){
+                node = queue.poll();
+            }
             if (node != null) {
-                if(arr[i] == null) node.left = null;
+                if (arr[i] == null) node.left = null;
                 else node.left = new TreeNode(arr[i]);
-                if(arr[i+1] == null) node.right = null;
-                else node.right = new TreeNode(arr[i + 1]);
+                if (i + 1 < arr.length) {
+                    if(arr[i+1] == null) node.right = null;
+                    else node.right = new TreeNode(arr[i + 1]);
+                }
                 queue.offer(node.left);
                 queue.offer(node.right);
             } else {
