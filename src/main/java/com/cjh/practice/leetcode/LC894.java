@@ -9,7 +9,6 @@ public class LC894 {
         Solution solution = new Solution();
         System.out.println(solution.allPossibleFBT(3));
         solution.allPossibleFBTDp(7).forEach(n-> System.out.println(TreeNode.preOrder(n)));
-        LinkedList s;
     }
 
     static class Solution {
