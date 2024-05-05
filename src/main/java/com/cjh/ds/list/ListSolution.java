@@ -14,18 +14,5 @@ public class ListSolution {
         return head.val == head.next.val ? head.next : head;
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-    static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
 }
