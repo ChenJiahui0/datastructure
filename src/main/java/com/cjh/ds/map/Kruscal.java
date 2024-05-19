@@ -1,7 +1,5 @@
 package com.cjh.ds.map;
 
-import com.cjh.leetcode.LC1135;
-
 import java.util.*;
 
 public class Kruscal {
