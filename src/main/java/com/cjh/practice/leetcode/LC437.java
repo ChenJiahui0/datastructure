@@ -1,4 +1,6 @@
-package com.cjh.leetcode;
+package com.cjh.practice.leetcode;
+
+import com.cjh.practice.leetcode.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;
