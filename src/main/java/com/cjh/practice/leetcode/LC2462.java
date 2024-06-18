@@ -1,4 +1,4 @@
-package com.cjh.leetcode;
+package com.cjh.practice.leetcode;;
 
 import java.util.PriorityQueue;
 
